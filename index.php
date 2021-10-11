@@ -1,18 +1,15 @@
 <?php
 require 'Bicycle.php';
 require 'Car.php';
+require 'Truck.php';
 
-$bike = new Bicycle();
-$bike->setColor('blue');
-$bike->setCurrentSpeed(0);
+$bicycle = new Bicycle('blue', 1);
+echo $bicycle->forward();
+var_dump($bicycle);
 
-echo $bike->forward();
-echo '<br> Vitesse du vélo : ' . $bike->setCurrentSpeed(15) . ' km/h' . '<br>';
-echo $bike->brake();
-echo '<br> Vitesse du vélo : ' . $bike->setCurrentSpeed(15) . ' km/h' . '<br>';
-echo $bike->brake();
+$car = new Car('green', 4, 'electric');
+echo $car->forward();
+var_dump($car);
 
-$macqueen = new Car('Blue', 5, 'E85');
-echo '<p>La voiture démarre ' . $macqueen->start() . '</p>';
-echo '<p>' . $macqueen->forward() . '</p>';
-echo $macqueen->break();
+$truck = new Truck('Black', 3, 250, 3500);
+var_dump($truck);
